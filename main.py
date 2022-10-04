@@ -11,7 +11,7 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import QApplication, QMainWindow
 from PySide2.QtGui import QCloseEvent
 import RCMain
-
+from Ui import Ui_MainUI
 
 ###########################################################################################################
 
@@ -280,10 +280,9 @@ def RUNNER():
     else:
         print("当前连接设备:%s" % str(devices) + "\n")
     print("------------------------")
-    Console_Process = Process(target=main)  # 实例化console
     GUI_Process = Process(target=GUIstarter)  # 实例化GUI
     GUI_Process.start()
-    Console_Process.start()
+    main()
 
 
 if __name__ == '__main__':
